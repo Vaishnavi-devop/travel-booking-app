@@ -44,9 +44,9 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 withCredentials([usernamePassword(
-                        credentialsId: 'docker',
-                        usernameVariable: 'DOCKER_USER',
-                        passwordVariable: 'DOCKER_PASS')]) {
+                        credentialsId: 'travel-docker',
+                        usernameVariable: 'vaishnaviadmin01',
+                        passwordVariable: 'pass')]) {
 
                     sh '''
                     echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
@@ -79,3 +79,6 @@ pipeline {
         }
     }
 }
+
+
+
